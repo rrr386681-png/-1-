@@ -1,0 +1,16 @@
+- name: Set up JDK 17
+  uses: actions/setup-java@v4
+  with:
+    java-version: '17'
+    distribution: 'temurin'
+
+- name: Setup Android SDK
+  uses: android-actions/setup-android@v3
+  with:
+    # Принудительно ставим платформу 34 и build-tools для неё
+    packages: 'platforms;android-34 build-tools;34.0.0'
+    # Автоматически принимаем лицензии, чтобы не было ошибки "licenses not accepted"
+    accept-android-sdk-licenses: true
+
+- name: Build with Gradle
+  run: gradle assembleDebug
