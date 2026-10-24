@@ -1,16 +1,24 @@
-plugins { id 'com.android.application' }
+plugins {
+    id 'com.android.application'
+}
+
 android {
-    namespace 'com.example.fixsensa'
+    namespace 'com.follyway.sensiboost'
     compileSdk 34
+
     defaultConfig {
-        applicationId "com.example.fixsensa"
+        applicationId "com.follyway.sensiboost"
         minSdk 26
         targetSdk 34
         versionCode 1
         versionName "1.0"
     }
 }
+
 dependencies {
-    implementation 'dev.rikka.shizuku:api:13.1.5'
-    implementation 'dev.rikka.shizuku:provider:13.1.5'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    // Если используешь Shizuku через maven, раскомментируй и используй эти строки:
+    // implementation 'dev.rikka.shizuku:api:12.1.0'
+    // implementation 'dev.rikka.shizuku:provider:12.1.0'
 }
